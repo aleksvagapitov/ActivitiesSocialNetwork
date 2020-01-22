@@ -1,3 +1,4 @@
+# ASP.NET
 dotnet new sln
 
 dotnet new classlib -n Domain
@@ -17,3 +18,13 @@ dotnet tool install --global dotnet-ef --version 3.0.0
 
 #### To create a Migration
 dotnet ef migrations add InitialCreate -p Persistence -s API/
+
+# React
+npx create-react-app client-app --use-npm --typescript
+
+## Packages
+npm install axios
+npm install semantic-ui-react
+
+# Outside Installations
+https://react-devtools-experimental-chrome.now.sh
