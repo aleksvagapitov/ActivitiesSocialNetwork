@@ -28,3 +28,20 @@ npm install semantic-ui-react
 
 # Outside Installations
 https://react-devtools-experimental-chrome.now.sh
+
+---
+# Entity Framework CLI
+
+### Create Migration
+dotnet ef migrations add "ActivityEntityAdded" -p Persistence -s API
+
+### Remove Migration
+dotnet ef migrations remove -p Persistence -s API
+
+### Downgrade Database Schema
+dotnet ef database update NameOfMigrationToGoBackToHere -p Persistence -s API
+
+---
+# Creating Snippets in VSCode
+Code > Preferences > User Snippets > New Snippets for File
+snippet-generator.app
