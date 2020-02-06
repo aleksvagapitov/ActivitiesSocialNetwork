@@ -30,6 +30,7 @@ npx create-react-app client-app --use-npm --typescript
 
 npm install axios
 npm install semantic-ui-react
+npm install mobx mobx-react-lite
 
 # Outside Installations
 
