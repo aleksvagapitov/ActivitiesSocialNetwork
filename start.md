@@ -31,6 +31,8 @@ npx create-react-app client-app --use-npm --typescript
 npm install axios
 npm install semantic-ui-react
 npm install mobx mobx-react-lite
+npm install react-router-dom
+npm install @types/react-router-dom
 
 # Outside Installations
 
