@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 import ActivityStore from "../../../app/stores/activityStore";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 
-export const ActivityDashboard: React.FC = () => {
+const ActivityDashboard: React.FC = () => {
   const activityStore = useContext(ActivityStore);
 
   useEffect(() => {
