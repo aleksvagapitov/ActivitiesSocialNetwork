@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { observer } from "mobx-react-lite";
 import { Segment, List, Item, Label, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
@@ -29,7 +28,7 @@ const ActivityDetailedSidebar = () => {
             <Image size="tiny" src={"/assets/user.png"} />
             <Item.Content verticalAlign="middle">
               <Item.Header as="h3">
-                <Link to={`#`}>Bob</Link>
+                <Link to={`#`}>User</Link>
               </Item.Header>
               <Item.Extra style={{ color: "orange" }}>Following</Item.Extra>
             </Item.Content>
@@ -59,4 +58,4 @@ const ActivityDetailedSidebar = () => {
   );
 };
 
-export default observer(ActivityDetailedSidebar);
+export default ActivityDetailedSidebar;

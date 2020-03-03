@@ -2,7 +2,6 @@ import React from "react";
 import { Item, Button, Segment, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { IActivity } from "../../../app/models/activity";
-import { observer } from "mobx-react-lite";
 
 const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
   return (
@@ -37,4 +36,4 @@ const ActivityListItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
   );
 };
 
-export default observer(ActivityListItem);
+export default ActivityListItem;

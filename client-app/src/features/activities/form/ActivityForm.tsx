@@ -4,13 +4,13 @@ import { IActivity } from "../../../app/models/activity";
 import { v4 as uuid } from "uuid";
 import ActivityStore from "../../../app/stores/activityStore";
 import { observer } from "mobx-react-lite";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps } from "react-router";
 
 interface DetailParams {
   id: string;
 }
 
-export const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
+const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({
   match,
   history
 }) => {

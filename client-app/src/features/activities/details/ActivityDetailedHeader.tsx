@@ -27,7 +27,7 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
           fluid
           style={activityImageStyle}
         />
-        <Segment basic style={activityImageTextStyle}>
+        <Segment style={activityImageTextStyle} basic>
           <Item.Group>
             <Item>
               <Item.Content>

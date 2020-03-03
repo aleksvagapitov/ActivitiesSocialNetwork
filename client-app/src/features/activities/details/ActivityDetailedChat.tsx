@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { observer } from "mobx-react-lite";
 import { Segment, Header, Form, Button, Comment } from "semantic-ui-react";
 
 const ActivityDetailedChat = () => {
@@ -59,4 +58,4 @@ const ActivityDetailedChat = () => {
   );
 };
 
-export default observer(ActivityDetailedChat);
+export default ActivityDetailedChat;
