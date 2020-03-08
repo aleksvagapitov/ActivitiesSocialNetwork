@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useContext, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
 import ActivityStore from "../../../app/stores/activityStore";
@@ -9,18 +8,6 @@ import ActivityDetailedHeader from "./ActivityDetailedHeader";
 import ActivityDetailedInfo from "./ActivityDetailedInfo";
 import ActivityDetailedChat from "./ActivityDetailedChat";
 import ActivityDetailedSidebar from "./ActivityDetailedSidebar";
-=======
-import React, { useContext, useEffect } from 'react';
-import { Grid } from 'semantic-ui-react';
-import ActivityStore from '../../../app/stores/activityStore';
-import { observer } from 'mobx-react-lite';
-import { RouteComponentProps } from 'react-router';
-import LoadingComponent from '../../../app/layout/LoadingComponent';
-import ActivityDetailedHeader from './ActivityDetailedHeader';
-import ActivityDetailedInfo from './ActivityDetailedInfo';
-import ActivityDetailedChat from './ActivityDetailedChat';
-import ActivityDetailedSidebar from './ActivityDetailedSidebar';
->>>>>>> develop
 
 interface DetailParams {
   id: string;
@@ -37,7 +24,7 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
     loadActivity(match.params.id);
   }, [loadActivity, match.params.id, history]);
 
-  if (loadingInitial) return <LoadingComponent content='Loading activity...' />;
+  if (loadingInitial) return <LoadingComponent content="Loading activity..." />;
 
   if (!activity) return <h2>Activity not found</h2>;
 

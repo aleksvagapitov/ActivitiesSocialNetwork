@@ -9,11 +9,7 @@ axios.interceptors.response.use(undefined, error => {
     if (error.message === 'Network Error' && !error.response) {
         toast.error('Network error - make sure API is running!')
     }
-<<<<<<< HEAD
     const { status, data, config } = error.response;
-=======
-    const {status, data, config} = error.response;
->>>>>>> develop
     if (status === 404) {
         history.push('/notfound')
     }
@@ -28,18 +24,14 @@ axios.interceptors.response.use(undefined, error => {
 
 const responseBody = (response: AxiosResponse) => response.data;
 
-const sleep = (ms: number) => (response: AxiosResponse) => 
+const sleep = (ms: number) => (response: AxiosResponse) =>
     new Promise<AxiosResponse>(resolve => setTimeout(() => resolve(response), ms));
 
 const requests = {
     get: (url: string) => axios.get(url).then(sleep(1000)).then(responseBody),
     post: (url: string, body: {}) => axios.post(url, body).then(sleep(1000)).then(responseBody),
     put: (url: string, body: {}) => axios.put(url, body).then(sleep(1000)).then(responseBody),
-<<<<<<< HEAD
     del: (url: string) => axios.delete(url).then(sleep(1000)).then(responseBody)
-=======
-    del: (url: string) => axios.delete(url).then(sleep(1000)).then(responseBody) 
->>>>>>> develop
 };
 
 const Activities = {
