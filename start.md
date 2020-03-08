@@ -33,7 +33,20 @@ npm install semantic-ui-react
 npm install mobx mobx-react-lite
 npm install react-router-dom
 npm install @types/react-router-dom
+
+// Notification Componenets
 npm install react-toastify
+
+// Form Components
+npm install react-final-form final-form
+
+// Date Components
+npm install react-widgets react-widgets-date-fns
+npm install date-fns@2.0.0-alpha.13
+npm install @types/react-widgets
+
+// Validation For Forms
+npm install revalidate
 
 # Outside Installations
 
