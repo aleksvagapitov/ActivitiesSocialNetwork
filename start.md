@@ -74,6 +74,12 @@ dotnet ef database drop -p Persistence -s API/
 
 ---
 
+# Dotnet Secrets
+
+dotnet user-secrets init -p API/
+
+dotnet user-secrets set "TokenKey" "INSERTAKEYHERE" -p API/
+
 # Creating Snippets in VSCode
 
 Code > Preferences > User Snippets > New Snippets for File
