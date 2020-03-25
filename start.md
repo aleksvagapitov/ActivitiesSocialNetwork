@@ -79,6 +79,12 @@ dotnet ef database drop -p Persistence -s API/
 dotnet user-secrets init -p API/
 
 dotnet user-secrets set "TokenKey" "INSERTAKEYHERE" -p API/
+<<<<<<< HEAD
+=======
+dotnet user-secrets set "Cloudinary:CloudName" "INSERTAKEYHERE"
+dotnet user-secrets set "Cloudinary:ApiKey" "INSERTAKEYHERE"                                                                                                
+dotnet user-secrets set "Cloudinary:ApiSecret" "INSERTAKEYHERE"
+>>>>>>> Section16
 
 # Creating Snippets in VSCode
 
