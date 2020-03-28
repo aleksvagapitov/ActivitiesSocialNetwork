@@ -45,6 +45,11 @@ npm install react-widgets react-widgets-date-fns
 npm install date-fns@2.0.0-alpha.13
 npm install @types/react-widgets
 
+// React-Dropzone
+npm install --save react-dropzone
+npm install react-cropper@1.2.0
+npm install @types/cropperjs@1.1.1
+
 // Validation For Forms
 npm install revalidate
 
@@ -80,11 +85,17 @@ dotnet user-secrets init -p API/
 
 dotnet user-secrets set "TokenKey" "INSERTAKEYHERE" -p API/
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 dotnet user-secrets set "Cloudinary:CloudName" "INSERTAKEYHERE"
 dotnet user-secrets set "Cloudinary:ApiKey" "INSERTAKEYHERE"                                                                                                
 dotnet user-secrets set "Cloudinary:ApiSecret" "INSERTAKEYHERE"
 >>>>>>> Section16
+=======
+dotnet user-secrets set "Cloudinary:CloudName" "INSERTAKEYHERE"
+dotnet user-secrets set "Cloudinary:ApiKey" "INSERTAKEYHERE"                                                                                                
+dotnet user-secrets set "Cloudinary:ApiSecret" "INSERTAKEYHERE"
+>>>>>>> Section17
 
 # Creating Snippets in VSCode
 

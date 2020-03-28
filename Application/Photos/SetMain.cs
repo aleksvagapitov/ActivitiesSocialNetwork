@@ -43,8 +43,6 @@ namespace Application.Photos
 
                 photo.IsMain = true;
 
-
-
                 var success = await _context.SaveChangesAsync() > 0;
 
                 if (success) return Unit.Value;
