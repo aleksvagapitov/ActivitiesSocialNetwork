@@ -29,6 +29,7 @@ axios.interceptors.response.use(undefined, error => {
     if (status === 500) {
         toast.error('Server error - check the terminal for more info!')
     }
+    console.log(error.response);
     throw error.response;
 })
 
@@ -69,6 +70,7 @@ const User = {
 
 const Profiles = {
     get: (username: string): Promise<IProfile> => requests.get(`/profiles/${username}`),
+    updateProfile: (profile: Partial<IProfile>) => requests.put(`/profiles`, profile),
     uploadPhoto: (photo: Blob) : Promise<IPhoto> => requests.postForm(`/photos`, photo),
     setMainPhoto: (id: string) => requests.post(`/photos/${id}/setMain`, {}),
     deletePhoto: (id: string) => requests.del(`/photos/${id}`)

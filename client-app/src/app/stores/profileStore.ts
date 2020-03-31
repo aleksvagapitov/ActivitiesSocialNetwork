@@ -1,12 +1,12 @@
-import { RootStore } from "./rootStore";
-import { observable, action, runInAction, computed } from "mobx";
-import { IProfile, IPhoto } from "../models/profile";
-import agent from "../api/agent";
-import { toast } from "react-toastify";
+import {RootStore} from './rootStore';
+import { observable, action, runInAction, computed } from 'mobx';
+import { IProfile, IPhoto } from '../models/profile';
+import agent from '../api/agent';
+import { toast } from 'react-toastify';
 
 export default class ProfileStore {
-    rootStore: RootStore;
-    constructor(rootStore: RootStore){
+    rootStore: RootStore
+    constructor(rootStore: RootStore) {
         this.rootStore = rootStore;
     }
 
@@ -16,8 +16,8 @@ export default class ProfileStore {
     @observable loading = false;
 
     @computed get isCurrentUser() {
-        if (this.rootStore.userStore.user && this.profile){
-            return this.rootStore.userStore.user.username === this.profile.username;
+        if (this.rootStore.userStore.user && this.profile) {
+            return this.rootStore.userStore.user.username === this.profile.username
         } else {
             return false;
         }
@@ -35,9 +35,23 @@ export default class ProfileStore {
             runInAction(() => {
                 this.loadingProfile = false;
             })
-            console.log(error);
+            console.log(error)
         }
     }
+    
+    @action updateProfile = async (profile: Partial<IProfile>) => {
+      try {
+          await agent.Profiles.updateProfile(profile);
+          runInAction(() => {
+              if (profile.displayName !== this.rootStore.userStore.user!.displayName) {
+                  this.rootStore.userStore.user!.displayName = profile.displayName!;
+              }
+              this.profile = {...this.profile!, ...profile}
+          })
+      } catch (error) {
+          toast.error('Problem updating profile')
+      }
+  }
 
     @action uploadPhoto = async (file: Blob) => {
         this.uploadingPhoto = true;
@@ -48,14 +62,14 @@ export default class ProfileStore {
                     this.profile.photos.push(photo);
                     if (photo.isMain && this.rootStore.userStore.user) {
                         this.rootStore.userStore.user.image = photo.url;
-                        this.profile.image = photo.url;
+                        this.profile.image = photo.url
                     }
                 }
                 this.uploadingPhoto = false;
             })
         } catch (error) {
             console.log(error);
-            toast.error('Problem uploading photo');
+            toast.error('Problem uploading photo')
             runInAction(() => {
                 this.uploadingPhoto = false;
             })
@@ -67,7 +81,7 @@ export default class ProfileStore {
         try {
             await agent.Profiles.setMainPhoto(photo.id);
             runInAction(() => {
-                this.rootStore.userStore.user!.image! = photo.url;
+                this.rootStore.userStore.user!.image = photo.url;
                 this.profile!.photos.find(a => a.isMain)!.isMain = false;
                 this.profile!.photos.find(a => a.id === photo.id)!.isMain = true;
                 this.profile!.image = photo.url;
@@ -81,7 +95,7 @@ export default class ProfileStore {
         }
     }
 
-    @action deletePhoto = async (photo: IPhoto)  => {
+    @action deletePhoto = async (photo: IPhoto) => {
         this.loading = true;
         try {
             await agent.Profiles.deletePhoto(photo.id);
@@ -90,7 +104,7 @@ export default class ProfileStore {
                 this.loading = false;
             })
         } catch (error) {
-            toast.error('Problem deleting a photo');
+            toast.error('Problem deleting the photo');
             runInAction(() => {
                 this.loading = false;
             })
