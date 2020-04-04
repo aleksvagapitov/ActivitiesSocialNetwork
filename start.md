@@ -53,6 +53,9 @@ npm install @types/cropperjs@1.1.1
 // Validation For Forms
 npm install revalidate
 
+// SignalR
+npm install @microsoft/signalr
+
 # Outside Installations
 
 https://react-devtools-experimental-chrome.now.sh
