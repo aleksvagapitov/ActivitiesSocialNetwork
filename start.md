@@ -56,6 +56,10 @@ npm install revalidate
 // SignalR
 npm install @microsoft/signalr
 
+// Infinite Scroller
+npm install react-infinite-scroller
+npm install @types/react-infinite-scroller
+
 # Outside Installations
 
 https://react-devtools-experimental-chrome.now.sh
