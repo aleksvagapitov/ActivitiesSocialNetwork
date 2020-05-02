@@ -108,3 +108,8 @@ dotnet user-secrets set "Cloudinary:ApiSecret" "INSERTAKEYHERE"
 
 Code > Preferences > User Snippets > New Snippets for File
 snippet-generator.app
+
+# Publishing the Application
+
+cd subdir && git init && cd ..
+dotnet publish -c Release -o publish --self-contained false Reactivities.sln                                       
