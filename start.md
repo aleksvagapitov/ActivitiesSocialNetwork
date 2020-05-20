@@ -91,18 +91,9 @@ dotnet ef database drop -p Persistence -s API/
 dotnet user-secrets init -p API/
 
 dotnet user-secrets set "TokenKey" "INSERTAKEYHERE" -p API/
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 dotnet user-secrets set "Cloudinary:CloudName" "INSERTAKEYHERE"
-dotnet user-secrets set "Cloudinary:ApiKey" "INSERTAKEYHERE"                                                                                                
+dotnet user-secrets set "Cloudinary:ApiKey" "INSERTAKEYHERE"
 dotnet user-secrets set "Cloudinary:ApiSecret" "INSERTAKEYHERE"
->>>>>>> Section16
-=======
-dotnet user-secrets set "Cloudinary:CloudName" "INSERTAKEYHERE"
-dotnet user-secrets set "Cloudinary:ApiKey" "INSERTAKEYHERE"                                                                                                
-dotnet user-secrets set "Cloudinary:ApiSecret" "INSERTAKEYHERE"
->>>>>>> Section17
 
 # Creating Snippets in VSCode
 
@@ -112,4 +103,8 @@ snippet-generator.app
 # Publishing the Application
 
 cd subdir && git init && cd ..
-dotnet publish -c Release -o publish --self-contained false Reactivities.sln                                       
+dotnet publish -c Release -o publish --self-contained false Reactivities.sln
+
+# Bringing Static Versions of CSS/JS
+
+npm install semantic-ui-css
