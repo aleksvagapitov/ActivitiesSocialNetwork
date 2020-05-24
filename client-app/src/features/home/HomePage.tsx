@@ -17,11 +17,11 @@ const HomePage = () => {
         <Header as="h1" inverted>
           <Image
             size="massive"
-            src="/assets/logo.png"
+            src="./assets/logo.png"
             alt="logo"
             style={{ marginBottom: 12 }}
           />
-          Reactivities
+          Activities Social Network
         </Header>
         {isLoggedIn && user && token ? (
           <Fragment>
@@ -36,7 +36,7 @@ const HomePage = () => {
           </Fragment>
         ) : (
           <Fragment>
-            <Header as="h2" inverted content="Welcome to Reactivities" />
+            <Header as="h2" inverted content="Welcome to Activities Social Network" />
             <Button onClick={() => openModal(<LoginForm/>)} size="huge" inverted>
               Login
             </Button>

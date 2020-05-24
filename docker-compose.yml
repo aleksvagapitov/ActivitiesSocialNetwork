@@ -1,11 +1,33 @@
 version: "3.1"
+
+networks:
+  activities:
+    driver: bridge 
+
 services:
-  db:
+  postgres-db:
     image: postgres
     restart: unless-stopped
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: Reactivities
+      POSTGRES_DB: ActivitiesSocialNetwork
       POSTGRES_PASSWORD: password123
       POSTGRES_USER: user
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    networks:
+      - activities
+  api:
+    image: aspnetcore-activities
+    build:
+      context: .
+    depends_on:
+      - "postgres-db"
+    ports:
+      - 8080:80
+    networks:
+      - activities
+
+volumes:
+  postgres-data:

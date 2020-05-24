@@ -38,9 +38,11 @@
   },
   "scripts": {
     "start": "BROWSER='firefox' react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "mv build ../API/wwwroot",
+    "build": "sh -ac '. ./.env.${REACT_APP_ENV}; react-scripts build'",
+    "build:production": "REACT_APP_ENV=production npm run build",
     "test": "react-scripts test",
+    "predeploy": "PUBLIC_URL=http://aleksvagapitov.github.io/ActivitiesSocialNetwork REACT_APP_ENV=production npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -57,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }

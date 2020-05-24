@@ -22,7 +22,7 @@ export const ActivityListItemAttendees: React.FC<IProps> = ({ attendees }) => {
               <Image
                 size="mini"
                 circular
-                src={attendee.image || "assets/user.png"}
+                src={attendee.image || "./assets/user.png"}
                 bordered
                 style={attendee.following ? styles : null}
               />

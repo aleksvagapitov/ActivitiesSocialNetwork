@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Form as FinalForm, Field } from "react-final-form";
-import { Form, Button, Header } from "semantic-ui-react";
+import { Form, Button, Header, Label } from "semantic-ui-react";
 import TextInput from "../../app/common/form/TextInput";
 import { RootStoreContext } from "../../app/stores/rootStore";
 import { IUserFormValues } from "../../app/models/user";
@@ -35,11 +35,13 @@ export const LoginForm = () => {
         <Form onSubmit={handleSubmit} error>
           <Header
             as="h2"
-            content="Login to Reactivities"
+            content="Login to Activities Social Network"
             color="teal"
             textAlign="center"
           />
+          <Label>Default: bob@test.com</Label>
           <Field name="email" component={TextInput} placeholder="Email" />
+          <Label>Default: Pa$$w0rd</Label>
           <Field
             name="password"
             component={TextInput}

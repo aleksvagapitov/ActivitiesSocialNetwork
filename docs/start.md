@@ -4,7 +4,7 @@ dotnet new sln
 
 dotnet new classlib -n Domain
 
-dotnet sln Reactivities.sln add Domain/Domain.csproj
+dotnet sln ActivitiesSocialNetwork.sln add Domain/Domain.csproj
 
 //From Application
 dotnet add reference ../Domain
@@ -103,7 +103,7 @@ snippet-generator.app
 # Publishing the Application
 
 cd subdir && git init && cd ..
-dotnet publish -c Release -o publish --self-contained false Reactivities.sln
+dotnet publish -c Release -o publish --self-contained false ActivitiesSocialNetwork.sln
 
 # Bringing Static Versions of CSS/JS
 
