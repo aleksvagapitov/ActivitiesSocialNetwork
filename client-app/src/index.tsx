@@ -10,10 +10,15 @@ import App from './app/layout/App';
 import * as serviceWorker from './serviceWorker';
 import ScrollToTop from './app/layout/ScrollToTop';
 import dateFnsLocalizer from 'react-widgets-date-fns';
+import ReactGA from 'react-ga';
 
 dateFnsLocalizer();
 
 export const history = createBrowserHistory({ basename: process.env.PUBLIC_URL});
+ReactGA.initialize('UA-149443615-2');
+history.listen((location, action) => {
+    ReactGA.pageview(location.pathname + location.search);
+});
 
 ReactDOM.render(
   <Router history={history}>

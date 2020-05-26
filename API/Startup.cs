@@ -165,6 +165,8 @@ namespace API
                     .ImageSources(s => s.Self().CustomSources("https://res.cloudinary.com",
                         "blob:", "data:"))
                     .ScriptSources(s => s.Self().CustomSources("sha256-zTmokOtDNMlBIULqs//ZgFtzokerG72Q30ccMjdGbSA="))
+                    .ScriptSources(s => s.Self().CustomSources("https://www.google-analytics.com/analytics.js", 
+                        "sha256-zTmokOtDNMlBIULqs//ZgFtzokerG72Q30ccMjdGbSA="))
             );
 
             // app.UseHttpsRedirection ();
